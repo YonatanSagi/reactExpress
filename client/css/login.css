@@ -1,0 +1,31 @@
+.loginContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(149, 149, 149);
+  max-width: 370px;
+  border-radius: 3px;
+  padding: 30px;
+  min-height: 420px;
+  align-items: center;
+} 
+.baseDiv{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.textField{
+  margin: 5px !important;
+}
+.btns {
+  border: 1px solid rgba(149, 149, 149, 0.5) !important;
+  margin: 5px !important;
+  text-transform: none !important;
+
+}
+.btnsDiv{
+  display: flex;
+  justify-content: center;
+}
