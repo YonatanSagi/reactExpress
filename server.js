@@ -31,19 +31,20 @@ app.use(passport.session());
 app.use('/',(req,res,next)=>{
     console.log(req.session);
     console.log(req.user);
-    res.send()
     next()
 })
 
 // routes requires
 const loginRouter = require('./server/routes/login.js');
 const registerRouter = require('./server/routes/signup');
-const { AppsSharp } = require('@mui/icons-material');
+const homeRouter = require('./server/routes/home')
+
 
 
 //routes calling
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/home',homeRouter)
 
 
 

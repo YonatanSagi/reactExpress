@@ -53,6 +53,7 @@ function Login() {
         <TextField onChange={(newValue) => { setpass(newValue.target.value) }} className='textField' placeholder='password' type='password'></TextField>
         <div className='btnsDiv'>
           <Button className='btns' variant='outlinde' onClick={() => { register(user, email, pass) }} >Register</Button>
+          <Button className='btns' variant='outlinde' onClick={()=>{navigate('/login')}}>Already a member?</Button>
         </div>
         {iserr ? err : ''}
       </Card>
