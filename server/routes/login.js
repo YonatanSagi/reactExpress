@@ -9,23 +9,16 @@ const router = express.Router();
 require('../configs/passport.config')
 router.use(bodyParser.json())
 
-router.post('/signin', passport.authenticate('local', { successRedirect: '/login/good', failureRedirect: '/login/bad' }), (req, res, next) => { })
-
-
-router.get('/bad', async (req, res) => {
-  req.session.loginCount ? req.session.loginCount++ : req.session.loginCount = 1
-  req.session.save()
-
-  console.log('heyyyy');
-  res.send()
+router.post('/signin', passport.authenticate('local'), (req, res, next) => { 
+  if(!req.user) return
+  const data = {}
+  data.id = req.user.id
+  data.email = req.user.email
+  data.username = req.user.username
+  res.send(data)
 })
 
-router.get('/good', (req, res) => {
-  req.session.loginCount ? req.session.loginCount++ : req.session.loginCount = 1
-  req.session.save()
-  console.log('good');
-  res.send()
-})
+
 
 
 
